@@ -1,0 +1,95 @@
+<div class="signup-form">
+    <form method="post">
+    <div class="form-header">
+      <h2>Registro Usuario</h2>
+      <p>Completar cada campo</p>
+    </div>
+    
+    <form [formGroup]="formGroup">
+
+    <div class="form-group">
+        <label for="username">UserName</label>
+          <input type="text" name="userName" formControlName="userName" class="form-control" required [ngClass]="{ 'is-invalid':  control.userName.errors}" />
+          <div *ngIf="control.userName.errors"  class="invalid-feedback">
+          <div *ngIf="control.userName.errors.required">Se requiere el userName del usuario </div>
+          </div>
+        </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+           <input type="text" name="password" formControlName="password" class="form-control" required [ngClass]="{ 'is-invalid':  control.password.errors}" />
+           <div *ngIf="control.password.errors"  class="invalid-feedback">
+           <div *ngIf="control.password.errors.required">Se requiere el password del usuario </div>
+           </div>
+        </div>
+    
+    <div class="form-group">
+        <label for="estado">Estado</label>
+            <select type="text" name="estado" formControlName="estado" class="form-control" required [ngClass]="{ 'is-invalid':  control.estado.errors}">
+            <option value="AC">AC</option>
+         </select>
+            <div *ngIf="control.estado.errors"  class="invalid-feedback">
+            <div *ngIf="control.estado.errors.required">Se requiere el estado del usuario </div>
+            </div>
+        </div>    
+
+    <div class="form-group">
+        <label for="firstName">FirstName</label>
+           <input type="text"name="firstName" formControlName="firstName" class="form-control" required [ngClass]="{ 'is-invalid':  control.firstName.errors}" />
+           <div *ngIf="control.firstName.errors"  class="invalid-feedback">
+           <div *ngIf="control.firstName.errors.required">Se requiere el firstName del usuario </div>
+           </div>
+        </div>
+
+    <div class="form-group">
+        <label for="lastName">LastName</label>
+           <input type="text"name="lastName" formControlName="lastName" class="form-control" required [ngClass]="{ 'is-invalid':  control.lastName.errors}" />
+           <div *ngIf="control.lastName.errors"  class="invalid-feedback">
+           <div *ngIf="control.lastName.errors.required">Se requiere el lastName del usuario </div>
+           </div>
+        </div>
+
+    <div class="form-group">
+        <label for="idUser">IdUser</label>
+           <input type="text"name="idUser" formControlName="idUser" class="form-control" required [ngClass]="{ 'is-invalid':  control.idUser.errors}" />
+           <div *ngIf="control.idUser.errors"  class="invalid-feedback">
+           <div *ngIf="control.idUser.errors.required">Se requiere el idUser del usuario </div>
+           </div>
+        </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+               <input type="text"name="email" formControlName="email" class="form-control" required [ngClass]="{ 'is-invalid':  control.email.errors}" />
+               <div *ngIf="control.email.errors"  class="invalid-feedback">
+               <div *ngIf="control.email.errors.required">Se requiere el email del usuario </div>
+               </div>
+        </div>
+            
+    <div class="form-group">
+        <label for="mobilePhone">MobilePhone</label>
+                <input type="text"name="mobilePhone" formControlName="mobilePhone" class="form-control" required [ngClass]="{ 'is-invalid':  control.mobilePhone.errors}" />
+                <div *ngIf="control.mobilePhone.errors"  class="invalid-feedback">
+                <div *ngIf="control.mobilePhone.errors.required">Se requiere el mobilePhone del usuario </div>
+                </div>
+        </div>
+
+    <div class="form-group">
+        <label for="role">Role</label>
+            <select id="role"name="role" formControlName="role" class="form-control" required [ngClass]="{ 'is-invalid':  control.role.errors}">
+            <option value="Vendedor">Vendedor</option>
+         </select>
+            <div *ngIf="control.role.errors"  class="invalid-feedback">
+            <div *ngIf="control.role.errors.required">Se requiere el role del usuario </div>
+            </div>
+        </div>
+        
+    <div class="button">
+      <button type="button" class="btn btn-primary btn-block btn-lg" (click)="onSubmit()" [disabled]="formGroup.invalid">Registrar Usuario</button>
+      <button type="button" class="btn btn-primary btn-block btn-lg" type="reset">Limpiar Formulario</button>
+    </div>
+
+    </form>	
+    
+    </form>
+
+</div>

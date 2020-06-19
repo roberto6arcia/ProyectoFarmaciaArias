@@ -1,0 +1,49 @@
+<div align='center'>
+    <h2>Consulta De Usuarios</h2>
+    </div>
+    
+      <div align='center'>
+        <div class="col-6">
+          <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Buscar por nombre">
+        </div>
+      </div>
+    
+      <hr/>
+      <div align='center'>
+      <h4><a class="badge badge-success" [routerLink]="['/userRegistroreactivo']">Registrar nuevo usuario</a></h4>
+      </div>
+      <hr/>
+      
+      <table class="table table-striped" *ngIf='users && users.length'>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">USERNAME</th>
+            <th scope="col">PASSWORD</th>
+            <th scope="col">ESTADO</th>
+            <th scope="col">PRIMER NOMBRE</th>
+            <th scope="col">SEGUNDO NOMBRE</th>
+            <th scope="col">ID USUARIO</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">MOBILEPHONE</th>
+            <th scope="col">ROLE USUARIO</th>
+            <th scope="col">EDITAR/ELIMINAR</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users|filtroProducto:searchText; index as i ">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ user.userName }} </td>
+            <td>{{ user.password }}</td>
+            <td>{{ user.estado }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td>
+            <td>{{ user.idUser }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.mobilePhone }}</td>
+            <td>{{ user.role }}</td>
+            <td> <a routerLink='/userEditar/{{user.idUser}}'> ver </a></td>
+          </tr>
+        </tbody>
+      </table>

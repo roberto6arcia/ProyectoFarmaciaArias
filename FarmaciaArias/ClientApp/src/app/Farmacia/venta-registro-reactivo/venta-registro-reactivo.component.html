@@ -1,0 +1,158 @@
+<div class="signup-form">
+  <form method="post">
+    <div class="form-header">
+      <h2>Venta Producto</h2>
+      <p>Completar cada campo</p>
+    </div>
+
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+      
+        <div class="form-group">
+          <label>Fecha de venta</label>
+          <input type="date" name="fechadeventa" formControlName="fechadeventa" class="form-control" required [ngClass]="{ 'is-invalid': control.fechadeventa.errors}" />
+          <div *ngIf="control.fechadeventa.errors" class="invalid-feedback">
+            <div *ngIf="control.fechadeventa.errors.required">Se requiere la fecha es requerida</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="estado">Estado</label>
+              <select type="text" name="estado" formControlName="estado" class="form-control" required [ngClass]="{ 'is-invalid':  control.estado.errors}">
+              <option value="AC">AC</option>
+           </select>
+              <div *ngIf="control.estado.errors"  class="invalid-feedback">
+              <div *ngIf="control.estado.errors.required">Se requiere el estado de la venta </div>
+              </div>
+          </div> 
+
+          <div class="form-label-group">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Agregar Productos
+          </button>
+          </div>
+
+      <div class="form-group">
+        <label>Total Venta:  </label>
+        {{ventaTotal}}
+      </div>
+      <br>
+
+      <br>
+
+        <div class="button">
+          <button type="button" class="btn btn-primary btn-block btn-lg" type="submit" (click)="onSubmit()">Registrar</button>
+          <button type="button" class="btn btn-primary btn-block btn-lg" type="reset" (click)="onReset()">Cancelar Formulario</button>
+        </div>
+
+      </form>
+
+      
+      <h5 class="card-title text-center">Detalles de la Venta</h5><br>
+      <table class="table table-hover" >
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Codigo Producto</th>
+          <th scope="col">Nombre Producto</th>
+          <th scope="col">Cantidad del Producto</th>
+          <th scope="col">Precio Venta</th>
+          <th scope="col">Total</th>
+    
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let detalleVentaView of detallesVentaViews; index as i">
+          <td data-label="#" scope="row">{{ i + 1 }}</td>
+          <td class="text-right">{{ detalleVentaView.codigoP }}</td>
+          <td class="text-right">{{ detalleVentaView.nombreProducto }}</td>
+          <td class="text-right">{{ detalleVentaView.cantidadV | number }}</td>
+          <td class="text-right">{{ detalleVentaView.precioV | number }}</td>
+          <td class="text-right">{{ detalleVentaView.totalVenta | number }}</td>
+  
+        </tr>
+        </tbody>
+      </table>
+      
+  
+    <!-- -------------------------------------------------------- -->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Detalles de la Venta</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- -------------------------------------------------------- -->
+
+            <form class="form-signin" [formGroup]="formGroupDetalle">
+
+              <div class="form-label-group">
+                <label for="productoId">Codigo Producto</label>
+                <input type="text" id="productoId" name="productoId" formControlName="productoId" class="form-control" required [ngClass]="{ 'is-invalid':  controlDetalle.productoId.errors}"/>
+                <div *ngIf="controlDetalle.productoId.errors" class="invalid-feedback">           
+                  <div *ngIf="controlDetalle.productoId.errors.required">Se require el codigo del producto</div>
+                </div>
+            </div>         
+  
+          <div class="form-label-group">
+            <label for="cantidadV">Cantidad</label>
+            <input type="number" id="cantidadV" name="cantidadV" formControlName="cantidadV" class="form-control" required [ngClass]="{ 'is-invalid':  controlDetalle.cantidadV.errors}"/>
+            <div *ngIf="controlDetalle.cantidadV.errors" class="invalid-feedback">           
+              <div *ngIf="controlDetalle.cantidadV.errors.required">Se require la cantidad del producto</div>
+            </div>
+        </div>
+  
+        <div class="form-label-group">
+          <label for="precioV">Precio</label>
+          <input type="number" id="precioV" name="precioV" formControlName="precioV" class="form-control" required [ngClass]="{ 'is-invalid':  controlDetalle.precioV.errors}"/>
+          <div *ngIf="controlDetalle.precioV.errors" class="invalid-feedback">           
+            <div *ngIf="controlDetalle.precioV.errors.required">Se require  valor de Paquete</div>
+          </div>
+      </div>
+
+        <div class="form-label-group">
+        <label for="totalV">totalV</label>  
+        <input type="number" id="totalV" name="totalV" readonly formControlName="totalV" class="form-control"/>
+        <!-- <div *ngIf="controlDetalle.totalVenta.errors" class="invalid-feedback">           
+          <div *ngIf="controlDetalle.totalVenta.errors.required">Se require  valor de Paquete</div>
+        </div> -->
+        </div>
+  
+          </form>
+         </div>
+
+         <h5 class="card-title text-center">Productos</h5>
+                          <table class="table table-hover">
+                            <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Codigo Producto</th>
+                              <th scope="col">Nombre Producto</th>
+                                              
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let producto of productos; index as i;"(click)="actualizaProducto(producto)">
+                              <td data-label="Nº" scope="row">{{ i + 1 }}</td>
+                              <td class="text-right">{{ producto.productoId }}</td> 
+                              <td class="text-right">{{ producto.nombre }}</td>
+         
+                            </tr>
+                            </tbody>
+                          </table>
+
+      <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" (click)="agregarDetalle()">Guardar cambios</button>
+          </div>
+
+        </div>
+      </div>
+  </div>
+  
+    </form>
+    </div>

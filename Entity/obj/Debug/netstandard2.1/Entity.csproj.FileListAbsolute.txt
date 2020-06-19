@@ -1,0 +1,8 @@
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Entity\bin\Debug\netstandard2.1\Entity.deps.json
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Entity\bin\Debug\netstandard2.1\Entity.dll
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Entity\bin\Debug\netstandard2.1\Entity.pdb
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Entity\obj\Debug\netstandard2.1\Entity.csprojAssemblyReference.cache
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Entity\obj\Debug\netstandard2.1\Entity.AssemblyInfoInputs.cache
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Entity\obj\Debug\netstandard2.1\Entity.AssemblyInfo.cs
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Entity\obj\Debug\netstandard2.1\Entity.dll
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Entity\obj\Debug\netstandard2.1\Entity.pdb

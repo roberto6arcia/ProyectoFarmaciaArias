@@ -1,0 +1,56 @@
+<div class="signup-form">
+    <form method="post">
+    <div class="form-header">
+      <h2>Registro Producto</h2>
+      <p>Completar cada campo</p>
+    </div>
+    
+    <form [formGroup]="formGroup">
+
+        <div class="form-group">
+        <label>Codigo</label>
+          <input type="text" name="codigoP" formControlName="codigoP" class="form-control" [ngClass]="{ 'is-invalid':  control.codigoP.errors}" />
+          <div *ngIf="control.codigoP.errors"  class="invalid-feedback">
+          <div *ngIf="control.codigoP.errors.required">Se requiere el codigo del producto </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+      <label>Nombre</label>
+          <input type="text" name="nombreP" formControlName="nombreP" class="form-control" [ngClass]="{ 'is-invalid':  control.nombreP.errors}" />
+          <div *ngIf="control.nombreP.errors"  class="invalid-feedback">
+          <div *ngIf="control.nombreP.errors.required">Se requiere el nombre del producto </div>
+            </div>
+        </div>
+      <div class="form-group">
+        <label>Laboratorio</label>
+           <input type="text"name="laboratorioP" formControlName="laboratorioP" class="form-control" [ngClass]="{ 'is-invalid':  control.laboratorioP.errors}" />
+           <div *ngIf="control.laboratorioP.errors"  class="invalid-feedback">
+            <div *ngIf="control.laboratorioP.errors.required">Se requiere el laboratorio del producto </div>
+           </div>
+        </div>
+    <div class="form-group">
+      <label>Fecha de vencimiento</label>
+            <input type="date" name="fechadevencimiento" formControlName="fechadevencimiento" class="form-control" [ngClass]="{ 'is-invalid': control.fechadevencimiento.errors}" />
+            <div *ngIf="control.fechadevencimiento.errors" class="invalid-feedback">
+              <div *ngIf="control.fechadevencimiento.errors.required">Se requiere la fecha es requerida</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Cantidad</label>
+               <input type="number" name="cantidadP" formControlName="cantidadP" class="form-control" [ngClass]="{ 'is-invalid':  control.cantidadP.errors}" />
+               <div *ngIf="control.cantidadP.errors"  class="invalid-feedback">
+                <div *ngIf="control.cantidadP.errors.required">Se requiere la cantidad del producto </div>
+               </div>
+            </div>
+        
+    <div class="button">
+      <button type="button" class="btn btn-primary btn-block btn-lg" (click)="onSubmit()" [disabled]="formGroup.invalid">Registrar</button>
+      <button type="button" class="btn btn-primary btn-block btn-lg" type="reset">Limpiar Formulario</button>
+    </div>
+
+    </form>	
+    
+    </form>
+
+</div>

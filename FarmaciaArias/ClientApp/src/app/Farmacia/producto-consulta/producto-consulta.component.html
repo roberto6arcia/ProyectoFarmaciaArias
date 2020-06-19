@@ -1,0 +1,41 @@
+<div align='center'>
+<h2>Consulta De Productos</h2>
+</div>
+
+  <div align='center'>
+    <div class="col-6">
+      <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Buscar por nombre">
+    </div>
+  </div>
+
+  <hr/>
+  <div align='center'>
+  <h4><a class="badge badge-success" [routerLink]="['/productoRegistroreactivo']">Registrar nueva persona</a></h4>
+  </div>
+  <hr/>
+  
+  <table class="table table-striped" *ngIf='productos && productos.length'>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">CODIGO</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">LABORATORIO</th>
+        <th scope="col">FECHA DE VENCIMIENTO</th>
+        <th scope="col">CANTIDAD</th>
+        <th scope="col">EDITAR/ELIMINAR</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos|filtroProducto:searchText; index as i ">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ producto.codigoP }} </td>
+        <td>{{ producto.nombreP }}</td>
+        <td>{{ producto.laboratorioP }}</td>
+        <td>{{ producto.fechadevencimiento }}</td>
+        <td>{{ producto.cantidadP }}</td>
+        <td> <a routerLink='/productoEditar/{{producto.codigoP}}'> ver </a></td>
+      </tr>
+    </tbody>
+  </table>

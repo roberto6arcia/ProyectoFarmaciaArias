@@ -1,0 +1,11 @@
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Datos\bin\Debug\netstandard2.1\Datos.deps.json
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Datos\bin\Debug\netstandard2.1\Datos.dll
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Datos\bin\Debug\netstandard2.1\Datos.pdb
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Datos\bin\Debug\netstandard2.1\Entity.dll
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Datos\bin\Debug\netstandard2.1\Entity.pdb
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Datos\obj\Debug\netstandard2.1\Datos.csprojAssemblyReference.cache
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Datos\obj\Debug\netstandard2.1\Datos.AssemblyInfoInputs.cache
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Datos\obj\Debug\netstandard2.1\Datos.AssemblyInfo.cs
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Datos\obj\Debug\netstandard2.1\Datos.csproj.CopyComplete
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Datos\obj\Debug\netstandard2.1\Datos.dll
+C:\Users\GARCIA\Documents\Ingenieria De Sistemas\PROGRMACION lV BAJO WEB\FARMACIAARIASORM\Datos\obj\Debug\netstandard2.1\Datos.pdb

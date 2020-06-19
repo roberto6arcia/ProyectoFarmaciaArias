@@ -8,15 +8,15 @@ namespace Entity
     {
         [Key]
         public int DetalleVentaId { get; set; }
-        public int CantidadV { get; set; }
-        public float PrecioV { get; set; }
+        public int Cantidad { get; set; }
+        public float Precio { get; set; }
         public float TotalVenta { get; set; }
         public void CalcularVenta() 
         {
-            TotalVenta = PrecioV*CantidadV;
+            TotalVenta = Precio*Cantidad;
         }
 
-        public string CodigoP { get; set; }
+        public int ProductoId { get; set; }
         public Producto Producto { get; set; }
 
         public int VentaId { get; set; }

@@ -20,7 +20,7 @@ namespace Logica
 
     public class DetalleVentaDto
     {
-        public int CodigoP { get; set; }
+        public int ProductoId { get; set; }
         public int CantidadV { get; set; }
         public float PrecioV { get; set; }
         public float TotalVenta { get; set; }
@@ -52,7 +52,8 @@ namespace Logica
 
             foreach (var item in ventaDto.Detalles)
               {
-                  var productoVendido =_context.Productos.Find(item.CodigoP);
+                  var productoVendido = _context.Productos.Find(item.ProductoId);
+                  /*var productoVendido = _context.Productos.FirstOrDefault(x => x.CodigoP == item.CodigoP);*/
                   if(productoVendido == null)
                   {
                        return new GuardarVentaResponse($"Error de la aplicacion: esta venta no contiene productos vendidos!");

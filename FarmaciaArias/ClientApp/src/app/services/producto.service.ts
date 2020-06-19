@@ -44,21 +44,12 @@ export class ProductoService {
       );
   }
 
-  getByIdentificacion(codigoP:string): Observable<Producto> {
+  getByIdentificacion(codigoP:number): Observable<Producto> {
     return this.http.get<Producto>(this.baseUrl + 'api/Producto/' + codigoP)
         .pipe(
             tap(_ => this.handleErrorService.log('datos enviados')),
             catchError(this.handleErrorService.handleError<Producto>('Consulta de Producto', null))
         );
-  }
-
-  update(producto: Producto): Observable<any> {
-    const url = `${this.baseUrl}api/Producto/${producto.codigoP}`;
-    return this.http.put(url, producto, httpOptions)
-    .pipe(
-      tap(_ => this.handleErrorService.log(`Actualizado producto id=${producto.codigoP}`)),
-      catchError(this.handleErrorService.handleError<any>('producto'))
-    );
   }
 
   getId(id: string): Observable<Producto> {
@@ -71,7 +62,7 @@ export class ProductoService {
   }
 
   delete(producto: Producto| string): Observable<Producto> {
-    const id = typeof producto === 'string' ? producto : producto.codigoP;
+    const id = typeof producto === 'string' ? producto : producto.productoId;
     const url = `${this.baseUrl +'api/Producto'}/${id}`;
     return this.http.delete<Producto>(url, httpOptions)
     .pipe(

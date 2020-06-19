@@ -3,5 +3,5 @@ export class VentaViewModel {
     fechadeventa: Date;
     cantidadVenta: number;
     precioVenta: number;
-    totalVenta: number;
+    total: number;
 }

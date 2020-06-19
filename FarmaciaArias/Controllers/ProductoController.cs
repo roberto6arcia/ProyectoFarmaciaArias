@@ -70,7 +70,7 @@ namespace FarmaciaArias.Controllers
         {
             var producto = new Producto
             {
-                CodigoP = productoInput.CodigoP,
+                ProductoId = productoInput.ProductoId,
                 NombreP = productoInput.NombreP,
                 LaboratorioP = productoInput.LaboratorioP,
                 Fechadevencimiento = productoInput.Fechadevencimiento,
@@ -79,17 +79,5 @@ namespace FarmaciaArias.Controllers
             return producto;
         }
 
-        [Authorize(Roles="Administrador,Vendedor")]
-        // PUT: api/Producto/5
-        [HttpPut("{codigoP}")]
-        public ActionResult<string> Put(string codigoP, Producto producto)
-        {
-            var id=_productoService.BuscarxIdentificacion(producto.CodigoP);
-            if(id==null){
-                return BadRequest("No encontrado");
-            }
-            var mensaje=_productoService.Modificar(producto);
-           return Ok(mensaje) ;
-        }
     }
-}
+ }

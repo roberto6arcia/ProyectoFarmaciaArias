@@ -1,8 +1,8 @@
 import { Venta } from "./venta";
 
 export class DetalleVenta {
-    codigoP: string;
-    cantidadV: number;
-    precioV: number;
+    productoId: number;
+    cantidad: number;
+    precio: number;
     totalVenta: number;
 }

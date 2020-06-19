@@ -25,14 +25,14 @@ export class ProductoRegistroReactivoComponent implements OnInit {
   private buildForm() {
     this.producto = new Producto();
     let myDate = new Date();
-    this.producto.codigoP = '';
+    this.producto.productoId = 0;
     this.producto.nombreP = '';
     this.producto.laboratorioP = '';
     this.producto.fechadevencimiento = myDate;
     this.producto.cantidadP = 0;
     
     this.formGroup = this.formBuilder.group({
-      codigoP: [this.producto.codigoP, Validators.required],
+      productoId: [this.producto.productoId, Validators.required],
       nombreP: [this.producto.nombreP, Validators.required],
       laboratorioP: [this.producto.laboratorioP, Validators.required],
       fechadevencimiento: [this.producto.fechadevencimiento, Validators.required],

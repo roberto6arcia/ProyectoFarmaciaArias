@@ -9,8 +9,8 @@ namespace FarmaciaArias.Models
 {
     public class ProductoInputModel
     {
-        [Required(ErrorMessage="El Codigo es requerido")]
-        public string CodigoP { get; set; }
+        [Required]
+        public int ProductoId { get; set; }
         [Required(ErrorMessage="El Nombre es requerido")]
         public string NombreP { get; set; }
         [Required(ErrorMessage="El Laboratorio es requerido")]
@@ -30,7 +30,7 @@ namespace FarmaciaArias.Models
         }
         public ProductoViewModel(Producto producto)
         {
-            CodigoP = producto.CodigoP;
+            ProductoId = producto.ProductoId;
             NombreP = producto.NombreP;
             LaboratorioP = producto.LaboratorioP;
             Fechadevencimiento = producto.Fechadevencimiento;

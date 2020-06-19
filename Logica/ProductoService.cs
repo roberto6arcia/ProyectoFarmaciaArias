@@ -18,11 +18,11 @@ namespace Logica
         {
             try
             {
-                var productoAux = _context.Productos.Find(producto.CodigoP);
+                /*var productoAux = _context.Productos.Find(producto.CodigoP);
                 if (productoAux != null)
                 {
                     return new GuardarProductoResponse($"Error de la Aplicacion: El producto ya se encuentra registrado!");
-                }               
+                }*/               
                 _context.Productos.Add(producto);
                 _context.SaveChanges();
                 return new GuardarProductoResponse(producto);
@@ -64,7 +64,7 @@ namespace Logica
         {
             try
             {
-                var productoViejo = _context.Productos.Find(productoNuevo.CodigoP);
+                var productoViejo = _context.Productos.Find(productoNuevo.ProductoId );
                 if (productoViejo != null)
                 {
                     _context.Productos.Update(productoNuevo);
@@ -72,7 +72,7 @@ namespace Logica
                 }
                 else
                 {
-                    return ($"Lo sentimos, {productoNuevo.CodigoP} no se encuentra registrado.");
+                    return ($"Lo sentimos, {productoNuevo.ProductoId } no se encuentra registrado.");
                 }
             }
             catch (Exception e)

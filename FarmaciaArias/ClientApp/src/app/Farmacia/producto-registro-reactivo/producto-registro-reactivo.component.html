@@ -6,15 +6,6 @@
     </div>
     
     <form [formGroup]="formGroup">
-
-        <div class="form-group">
-        <label>Codigo</label>
-          <input type="text" name="codigoP" formControlName="codigoP" class="form-control" [ngClass]="{ 'is-invalid':  control.codigoP.errors}" />
-          <div *ngIf="control.codigoP.errors"  class="invalid-feedback">
-          <div *ngIf="control.codigoP.errors.required">Se requiere el codigo del producto </div>
-          </div>
-        </div>
-
         <div class="form-group">
       <label>Nombre</label>
           <input type="text" name="nombreP" formControlName="nombreP" class="form-control" [ngClass]="{ 'is-invalid':  control.nombreP.errors}" />

@@ -30,7 +30,7 @@
     <tbody>
       <tr *ngFor="let producto of productos|filtroProducto:searchText; index as i ">
         <th scope="row">{{ i + 1 }}</th>
-        <td>{{ producto.codigoP }} </td>
+        <td>{{ producto.productoId }} </td>
         <td>{{ producto.nombreP }}</td>
         <td>{{ producto.laboratorioP }}</td>
         <td>{{ producto.fechadevencimiento }}</td>

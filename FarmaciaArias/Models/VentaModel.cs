@@ -21,9 +21,9 @@ namespace FarmaciaArias.Models
 
     public class DetalleVentaInputModel
     {
-        public string CodigoP { get; set; }
-        public int CantidadV { get; set; }
-        public float PrecioV { get; set; }
+        public int ProductoId { get; set; }
+        public int Cantidad { get; set; }
+        public float Precio { get; set; }
         public float TotalVenta { get; set; }
     }
 
@@ -43,9 +43,9 @@ namespace FarmaciaArias.Models
             foreach (var item in venta.Detalles)
             {    
                    var detalleVenta= new DetalleVentaViewModel();
-                   detalleVenta.CodigoP=item.CodigoP;
-                   detalleVenta.CantidadV=item.CantidadV;
-                   detalleVenta.PrecioV=item.PrecioV;                 
+                   detalleVenta.ProductoId=item.ProductoId;
+                   detalleVenta.Cantidad=item.Cantidad;
+                   detalleVenta.Precio=item.Precio;                 
                    detalleVenta.TotalVenta=item.TotalVenta;
                    DetallesView.Add(detalleVenta);
              }
@@ -56,9 +56,9 @@ namespace FarmaciaArias.Models
 
     public class DetalleVentaViewModel
     {
-        public string CodigoP { get; set; }
-        public int CantidadV { get; set; }
-        public float PrecioV { get; set; }
+        public int ProductoId { get; set; }
+        public int Cantidad { get; set; }
+        public float Precio { get; set; }
         public float TotalVenta { get; set; }
     }
 }

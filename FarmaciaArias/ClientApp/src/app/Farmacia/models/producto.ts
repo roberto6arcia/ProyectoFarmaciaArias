@@ -1,5 +1,5 @@
 export class Producto {
-    codigoP : string;
+    productoId : number;
     nombreP: string;
     laboratorioP: string;
     fechadevencimiento: Date;

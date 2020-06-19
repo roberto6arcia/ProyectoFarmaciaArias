@@ -22,16 +22,7 @@ export class ProductoEditarComponent implements OnInit {
     });
   }
 
-  update() {
-    this.productoService.update(this.producto).subscribe(p => {
-      alert(p);
-    });
-  }
 
-  delete() {
-    this.productoService.delete(this.producto.codigoP).subscribe(p => {
-      alert(p);
-    });
-  }
+
 
 }

@@ -1,7 +1,7 @@
 export class DetalleVentaViewModel {
-    codigoP: string;
+    productoId: number;
     nombreProducto:string;
-    cantidadV: number;
-    precioV: number;
+    cantidad: number;
+    precio: number;
     totalVenta: number;
 }

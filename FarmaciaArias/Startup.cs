@@ -30,6 +30,9 @@ namespace FarmaciaArias
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers().AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
             //configurar la cadena de conexión y el motor de la base de datos para el EF Core. 
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ProductosContext>(opt => opt.UseSqlServer(connectionString));

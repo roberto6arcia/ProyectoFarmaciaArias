@@ -47,9 +47,9 @@ export class VentaRegistroReactivoComponent implements OnInit {
     this.venta.total = 0;
     this.ventaTotal = 0;
 
-    this.detalleVenta.codigoP = '';
-    this.detalleVenta.cantidadV= 0;
-    this.detalleVenta.precioV= 0;
+    this.detalleVenta.productoId = 0;
+    this.detalleVenta.cantidad= 0;
+    this.detalleVenta.precio= 0;
     this.detalleVenta.totalVenta= 0;
     
     this.formGroup = this.formBuilder.group({
@@ -58,9 +58,9 @@ export class VentaRegistroReactivoComponent implements OnInit {
     });
 
     this.formGroupDetalle  = this.formBuilder.group({
-      codigoP: [this.detalleVenta.codigoP, Validators.required],
-      cantidadV: [this.detalleVenta.cantidadV, Validators.required],    
-      precioV: [this.detalleVenta.precioV, Validators.required],
+      productoId: [this.detalleVenta.productoId, Validators.required],
+      cantidad: [this.detalleVenta.cantidad, Validators.required],    
+      precio: [this.detalleVenta.precio, Validators.required],
       totalVenta: [''],
 
     });
@@ -76,19 +76,19 @@ export class VentaRegistroReactivoComponent implements OnInit {
 
   agregarDetalle(){
     let detalle = new DetalleVenta();
-    detalle.cantidadV = this.formGroupDetalle.value.cantidadV;
-    detalle.precioV= this.formGroupDetalle.value.precioV; 
+    detalle.cantidad = this.formGroupDetalle.value.cantidad;
+    detalle.precio= this.formGroupDetalle.value.precio; 
     detalle.totalVenta= this.formGroupDetalle.value.totalVenta; 
-    detalle.codigoP= this.formGroupDetalle.value.codigoP;
+    detalle.productoId= this.formGroupDetalle.value.productoId;
     this.detallesVenta.push(detalle);
     this.ventaTotal=this.ventaTotal+detalle.totalVenta;
 
     //Detalles con nombre del producto para mostrar en la tabla
     let detalleView = new DetalleVentaViewModel();
-    detalleView.cantidadV = this.formGroupDetalle.value.cantidadV;
-    detalleView.precioV= this.formGroupDetalle.value.precioV; 
+    detalleView.cantidad = this.formGroupDetalle.value.cantidad;
+    detalleView.precio= this.formGroupDetalle.value.precio; 
     detalleView.totalVenta= this.formGroupDetalle.value.totalVenta; 
-    detalleView.codigoP= this.formGroupDetalle.value.codigoP;
+    detalleView.productoId= this.formGroupDetalle.value.productoId;
     detalleView.nombreProducto= this.nombreProducto;
     this.detallesVentaViews.push(detalleView);
     this.formGroupDetalle.reset();
@@ -138,14 +138,14 @@ actualizar(producto: Producto) {
 
   //calcula el total de la venta para ser mostrada en el formulario
   totalDetalleVenta(){
-    var detalle =this.formGroupDetalle.controls.precioV.value*this.formGroupDetalle.controls.cantidadV.value;
+    var detalle =this.formGroupDetalle.controls.precio.value*this.formGroupDetalle.controls.cantidad.value;
     this.controlDetalle['totalVenta'].setValue(detalle);
    } 
 
    //pasa los valores del producto al detalle de venta  
    actualizaProducto(producto: Producto){
     
-    this.controlDetalle['productoId'].setValue(producto.codigoP);
+    this.controlDetalle['productoId'].setValue(producto.productoId);
     this.nombreProducto=producto.nombreP;
    } 
 

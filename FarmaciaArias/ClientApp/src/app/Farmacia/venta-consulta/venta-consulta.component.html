@@ -1,16 +1,12 @@
 <div align='center'>
     <h2>Consulta De Ventas</h2>
     </div>
-      <table class="table table-striped" *ngIf='ventas && ventas.length'>
+      <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">CODIGO DE VENTA</th>
-            <th scope="col">CODIGO DE PRODUCTO</th>
-            <th scope="col">NOMBRE DE PRODUCTO</th>
+            <th scope="col">ID VENTA</th>
             <th scope="col">FECHA DE VENTA</th>
-            <th scope="col">PRECIO</th>
-            <th scope="col">CANTIDA</th>
             <th scope="col">TOTAL</th>
             
           </tr>
@@ -29,12 +25,10 @@
           </tr>-->
 
           <tr *ngFor="let ventaViewModel of ventaViewModels; index as i">
-            <td data-label="#" scope="row">{{ i + 1 }}</td>
-            <td data-label="VentaId"class="text-right">{{ ventaViewModel.ventaId | number }}</td>
-            <td data-label="Fecha de venta"class="text-right">{{ ventaViewModel.fechadeventa }}</td>
-            <td data-label="Cantidad producto"class="text-right">{{ ventaViewModel.cantidadV | number}}</td>
-            <td data-label="Precio producto"class="text-right">{{ ventaViewModel.precioV | number}}</td>
-            <td data-label="Total Venta"class="text-right">{{ ventaViewModel.totalV | number}}</td>
+            <td scope="row">{{ i + 1 }}</td>
+            <td >{{ ventaViewModel.ventaId | number }}</td>
+            <td >{{ ventaViewModel.fechadeventa }}</td>
+            <td >{{ ventaViewModel.total | number}}</td>
             <!--<td><a routerLink="/taskedit/{{task.id}}">ver</a></td> -->
           </tr>
 

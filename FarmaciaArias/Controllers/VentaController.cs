@@ -72,9 +72,9 @@ namespace FarmaciaArias.Controllers
             foreach (var item in ventaInput.Detalles)
             {    
                    var detalleVenta= new DetalleVenta();
-                   detalleVenta.CodigoP=item.CodigoP;
-                   detalleVenta.CantidadV=item.CantidadV;
-                   detalleVenta.PrecioV=item.PrecioV;                  
+                   detalleVenta.ProductoId=item.ProductoId;
+                   detalleVenta.Cantidad=item.Cantidad;
+                   detalleVenta.Precio=item.Precio;                  
                    detalleVenta.CalcularVenta() ;
                    venta.Detalles.Add(detalleVenta);
              }

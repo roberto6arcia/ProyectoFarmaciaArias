@@ -62,12 +62,12 @@
         </thead>
         <tbody>
         <tr *ngFor="let detalleVentaView of detallesVentaViews; index as i">
-          <td data-label="#" scope="row">{{ i + 1 }}</td>
-          <td class="text-right">{{ detalleVentaView.codigoP }}</td>
-          <td class="text-right">{{ detalleVentaView.nombreProducto }}</td>
-          <td class="text-right">{{ detalleVentaView.cantidadV | number }}</td>
-          <td class="text-right">{{ detalleVentaView.precioV | number }}</td>
-          <td class="text-right">{{ detalleVentaView.totalVenta | number }}</td>
+          <td scope="row">{{ i + 1 }}</td>
+          <td >{{ detalleVentaView.productoId }}</td>
+          <td >{{ detalleVentaView.nombreProducto }}</td>
+          <td >{{ detalleVentaView.cantidad | number }}</td>
+          <td >{{ detalleVentaView.precio | number }}</td>
+          <td >{{ detalleVentaView.totalVenta | number }}</td>
   
         </tr>
         </tbody>
@@ -96,27 +96,32 @@
                 <div *ngIf="controlDetalle.productoId.errors" class="invalid-feedback">           
                   <div *ngIf="controlDetalle.productoId.errors.required">Se require el codigo del producto</div>
                 </div>
-            </div>         
+            </div>
+            
+            <div class="form-group">
+              <label>Nombre :  </label>
+              {{nombreProducto}}
+            </div>
   
           <div class="form-label-group">
-            <label for="cantidadV">Cantidad</label>
-            <input type="number" id="cantidadV" name="cantidadV" formControlName="cantidadV" class="form-control" required [ngClass]="{ 'is-invalid':  controlDetalle.cantidadV.errors}"/>
-            <div *ngIf="controlDetalle.cantidadV.errors" class="invalid-feedback">           
-              <div *ngIf="controlDetalle.cantidadV.errors.required">Se require la cantidad del producto</div>
+            <label for="cantidadV">Cantidad a vender</label>
+            <input type="number" id="cantidad" name="cantidad" formControlName="cantidad" class="form-control" (blur)="totalDetalleVenta()" required [ngClass]="{ 'is-invalid':  controlDetalle.cantidad.errors}"/>
+            <div *ngIf="controlDetalle.cantidad.errors" class="invalid-feedback">           
+              <div *ngIf="controlDetalle.cantidad.errors.required">Se require la cantidad del producto</div>
             </div>
         </div>
   
         <div class="form-label-group">
-          <label for="precioV">Precio</label>
-          <input type="number" id="precioV" name="precioV" formControlName="precioV" class="form-control" required [ngClass]="{ 'is-invalid':  controlDetalle.precioV.errors}"/>
-          <div *ngIf="controlDetalle.precioV.errors" class="invalid-feedback">           
-            <div *ngIf="controlDetalle.precioV.errors.required">Se require  valor de Paquete</div>
+          <label for="precioV">Precio de venta</label>
+          <input type="number" id="precio" name="precio" formControlName="precio" class="form-control" (blur)="totalDetalleVenta()" required [ngClass]="{ 'is-invalid':  controlDetalle.precio.errors}"/>
+          <div *ngIf="controlDetalle.precio.errors" class="invalid-feedback">           
+            <div *ngIf="controlDetalle.precio.errors.required">Se require precio de venta</div>
           </div>
       </div>
 
         <div class="form-label-group">
-        <label for="totalV">totalV</label>  
-        <input type="number" id="totalV" name="totalV" readonly formControlName="totalV" class="form-control"/>
+        <label for="totalVenta">total Venta</label>  
+        <input type="number" id="totalVenta" name="totalVenta" readonly formControlName="totalVenta" class="form-control"/>
         <!-- <div *ngIf="controlDetalle.totalVenta.errors" class="invalid-feedback">           
           <div *ngIf="controlDetalle.totalVenta.errors.required">Se require  valor de Paquete</div>
         </div> -->
@@ -129,17 +134,17 @@
                           <table class="table table-hover">
                             <thead>
                             <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Codigo Producto</th>
-                              <th scope="col">Nombre Producto</th>
+                              <th >#</th>
+                              <th >Codigo Producto</th>
+                              <th >Nombre Producto</th>
                                               
                             </tr>
                             </thead>
                             <tbody>
                             <tr *ngFor="let producto of productos; index as i;"(click)="actualizaProducto(producto)">
-                              <td data-label="Nº" scope="row">{{ i + 1 }}</td>
-                              <td class="text-right">{{ producto.productoId }}</td> 
-                              <td class="text-right">{{ producto.nombre }}</td>
+                              <td scope="row">{{ i + 1 }}</td>
+                              <td >{{ producto.productoId | number }}</td> 
+                              <td >{{ producto.nombreP }}</td>
          
                             </tr>
                             </tbody>
